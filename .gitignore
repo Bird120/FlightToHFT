@@ -1,0 +1,14 @@
+# ignore some source folders
+/src/Coin/
+/src/Entity/
+/src/Collisions/
+/src/CollisionsManager/
+LaterPopup.cpp
+
+# ignore build folder if not delete
+/build/
+
+# ignore compiler/project files 
+*.idea/
+/CMakeFiles/
+/cmake-build-debug/
