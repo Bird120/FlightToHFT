@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0" version="28.2.9" pages="5">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0" version="29.0.2" pages="5">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Scene">
     <mxGraphModel dx="1360" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="4" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -457,16 +457,34 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="anXfhnpNbIw5htBeCmC1-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Menu&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;«constant» MENU_OPTIONS = 3&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- menuOptions: sf::Text[MENU_OPTIONS]&lt;br&gt;- next_step: bool&lt;br&gt;- choiceselection: choiceSelection&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Menu(window: sf::RenderWindow&amp;amp;)&lt;br&gt;+ draw(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ moveUp(): void&lt;br&gt;+ moveDown(): void&lt;br&gt;+ checkEvent(dir: Direction&amp;amp;): void&lt;br&gt;+ initialize(state: bool): void&lt;br&gt;+ inputs(event: sf::Event&amp;amp;): Direction&lt;br&gt;+ update(dir: Direction&amp;amp;): bool&lt;br&gt;+ exit(): void&lt;br&gt;+ display(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ gameStart(): bool&lt;br&gt;+ validToNextStep(): void&lt;br&gt;+ keyboardUp(): void&lt;br&gt;+ keyboardDown(): void&lt;br&gt;+ keyboardEnter(window: sf::RenderWindow&amp;amp;): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="520" y="240" width="330" height="340" as="geometry" />
+        <mxCell id="anXfhnpNbIw5htBeCmC1-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Menu&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;«constant» MENU_OPTIONS = 3&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- menuOptions: sf::Text[MENU_OPTIONS]&lt;br&gt;- next_step: bool&lt;br&gt;- choiceselection: choiceSelection&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Menu(window: sf::RenderWindow&amp;amp;)&lt;br&gt;+ draw(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ moveUp(): void&lt;br&gt;+ moveDown(): void&lt;br&gt;+ checkEvent(dir: Direction&amp;amp;): void&lt;br&gt;+ initialize(state: bool): void&lt;br&gt;+ inputs(event: sf::Event&amp;amp;): Direction&lt;br&gt;+ update(dir: Direction&amp;amp;): bool&lt;br&gt;+ exit(): void&lt;br&gt;+ display(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ gameStart(): bool&lt;br&gt;+ validToNextStep(): void&lt;br&gt;+ keyboardUp(): void&lt;br&gt;+ keyboardDown(): void&lt;br&gt;+ keyboardEnter(window: sf::RenderWindow&amp;amp;): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="520" y="235" width="330" height="340" as="geometry" />
         </mxCell>
-        <mxCell id="anXfhnpNbIw5htBeCmC1-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;choiceSelection&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- item: std::size_t&lt;br&gt;- CHOICE_OPTIONS: std::size_t = 0&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ choiceSelection()&lt;br&gt;+ changeIteretion(): void&lt;br&gt;+ changeColor(menuOptions: auto&amp;amp;): void&lt;br&gt;+ itemGoDown(): void&lt;br&gt;+ itemGoUp(): void&lt;br&gt;+ notSelected(menuOptions: sf::Text*): void&lt;br&gt;+ Selected(menuOptions: sf::Text*): void&lt;br&gt;+ getItem() const: std::size_t&lt;br&gt;+ initializeItemValue(value: const std::size_t&amp;amp;): void&lt;br&gt;+ modifyItem(): std::size_t&amp;amp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="anXfhnpNbIw5htBeCmC1-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;choiceSelection&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- item: std::size_t&lt;br&gt;- CHOICE_OPTIONS: std::size_t = 0&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ choiceSelection()&lt;br&gt;+ changeIteretion(): void&lt;br&gt;+ changeColor(menuOptions: auto&amp;amp;): void&lt;br&gt;+ itemGoDown(): void&lt;br&gt;+ itemGoUp(): void&lt;br&gt;+ notSelected(menuOptions: sf::Text*): void&lt;br&gt;+ Selected(menuOptions: sf::Text*): void&lt;br&gt;+ getItem() const: std::size_t&lt;br&gt;+ initializeItemValue(value: const std::size_t&amp;amp;): void&lt;br&gt;+ modifyItem(): std::size_t&amp;amp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="80" y="280" width="280" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="anXfhnpNbIw5htBeCmC1-3" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
+        <mxCell id="anXfhnpNbIw5htBeCmC1-3" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" parent="1" edge="1">
           <mxGeometry x="-1" y="3" relative="1" as="geometry">
             <mxPoint x="360" y="310" as="sourcePoint" />
             <mxPoint x="520" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A87ZzgjtF_pWI4O0F__j-1" value="Scene" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="70" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="A87ZzgjtF_pWI4O0F__j-2" value="page Scene&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="A87ZzgjtF_pWI4O0F__j-1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="A87ZzgjtF_pWI4O0F__j-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="A87ZzgjtF_pWI4O0F__j-1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="A87ZzgjtF_pWI4O0F__j-4" value="page Scene" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="A87ZzgjtF_pWI4O0F__j-1">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="A87ZzgjtF_pWI4O0F__j-5" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.482;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="anXfhnpNbIw5htBeCmC1-1" target="A87ZzgjtF_pWI4O0F__j-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="540" y="200" as="sourcePoint" />
+            <mxPoint x="680" y="170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
