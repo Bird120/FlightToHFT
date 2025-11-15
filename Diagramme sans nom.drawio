@@ -125,78 +125,81 @@
     </mxGraphModel>
   </diagram>
   <diagram id="VXs8nEoAoBl45Zeq-gOV" name="GameScene">
-    <mxGraphModel dx="1360" dy="737" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="4" pageWidth="500" pageHeight="300" math="0" shadow="0">
+    <mxGraphModel dx="1813" dy="983" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="4" pageWidth="500" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="vzY-vIZQmNCtY-O4xjxG-1" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="140" y="150" width="1730" height="930" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GameScene&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&amp;nbsp;# player: PlayerSprite&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# boundaryChecker: BoundaryChecker&lt;br&gt;# movementSystem: MovementSystem&lt;br&gt;# coinTexture: sf::Texture&lt;br&gt;# coins: std::vector&amp;lt;std::pair&amp;lt;std::unique_ptr&amp;lt;Coin&amp;gt;, int&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ GameScene(window: sf::RenderWindow&amp;amp;)&lt;br&gt;+ ~GameScene()&lt;br&gt;+ initialize(state: bool): void&lt;br&gt;+ inputs(event: sf::Event&amp;amp;): Direction&lt;br&gt;+ update(dir: Direction&amp;amp;): bool&lt;br&gt;+ exit(): void&lt;br&gt;+ display(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ setterPosition(): void&lt;br&gt;+ canPlayerMove(dir: Direction&amp;amp;): bool&lt;br&gt;+ movementSystem_(dir: Direction&amp;amp;, event: sf::Event&amp;amp;): void&lt;br&gt;+ keyboardUp(): void&lt;br&gt;+ keyboardDown(): void&lt;br&gt;+ keyboardEnter(window: sf::RenderWindow&amp;amp;): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# getPlayer(): PlayerSprite&amp;amp;&lt;br&gt;# getBoundaryChecker(): BoundaryChecker&amp;amp;&lt;br&gt;# getMovementSystem(): MovementSystem&amp;amp;&lt;br&gt;# getCoins(): std::vector&amp;lt;std::pair&amp;lt;std::unique_ptr&amp;lt;Coin&amp;gt;, int&amp;gt;&amp;gt;&amp;amp;&lt;br&gt;# eraseCoin(iterator: unsigned int): void&lt;br&gt;# verifyIfCollisionDetect(iterator: int): void&lt;br&gt;# addCoinToCoins(coin: std::unique_ptr&amp;lt;Coin&amp;gt;, page: int): void&lt;br&gt;# createCoin(x: float, y: float, page: int): void&lt;br&gt;# updateAllCoins(timer: float, page: int): void&lt;br&gt;# drawAllCoins(page: int, window: sf::RenderWindow&amp;amp;): void&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1">
-          <mxGeometry x="660" width="360" height="490" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BoundaryChecker&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;N/A&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ BoundaryChecker()&lt;br&gt;+ canMove(direction: Direction, player: PlayerSprite&amp;amp;, window: sf::RenderWindow&amp;amp;, manager: BackgroundManager&amp;amp;): bool&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1">
-          <mxGeometry y="20" width="410" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MovementSystem&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- movingDirection: std::unique_ptr&amp;lt;MovingDirection&amp;gt;&amp;nbsp;&lt;br&gt;+ boardManager: BoardManager&lt;br&gt;+ wall: WallManager&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&amp;nbsp;+ MovementSystem()&lt;br&gt;&amp;nbsp;+ changePosition(direction: Direction&amp;amp;, player: PlayerSprite&amp;amp;, newPage: bool&amp;amp;, page: int): void&amp;nbsp;&lt;br&gt;&amp;nbsp;+ getMovingDirection(): MovingDirection*&amp;nbsp; &amp;nbsp;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1">
-          <mxGeometry x="1190" y="50" width="540" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PlayerSprite&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- texture: sf::Texture&lt;br&gt;- sprite: sf::Sprite&lt;br&gt;- Xposition: float = 100.0f&lt;br&gt;- Yposition: float = 500.0f&lt;br&gt;- texturesPlayer: std::map&amp;lt;Direction, sf::Texture&amp;gt;&lt;br&gt;- spriteRects: std::map&amp;lt;Direction, sf::IntRect&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PlayerSprite(filename: std::filesystem::path&amp;amp;)&lt;br&gt;+ setterPosition(window: sf::RenderWindow&amp;amp;, begin: bool&amp;amp;): void&lt;br&gt;+ displayRightSprite(dir: Direction&amp;amp;): void&lt;br&gt;+ setScaleSprite(): void&lt;br&gt;+ getSprite(): sf::Sprite&amp;amp;&lt;br&gt;+ getYPosition(): float&lt;br&gt;+ getXPosition(): float&lt;br&gt;+ setXPosition(number: float): void&lt;br&gt;+ setYPosition(number: float): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1">
-          <mxGeometry x="50" y="250" width="360" height="300" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-10" value="" style="group" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1" connectable="0">
-          <mxGeometry x="600" y="490" width="490" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Level1&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- begin: bool&lt;br&gt;- choiceselection: choiceSelection&lt;br&gt;- collisions_manager_: CollisionsManager&lt;br&gt;- deltaClock: sf::Clock&lt;br&gt;+ popManager: PopupManager&lt;br&gt;+ popManagerLayer: PopupManagerLayer&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Level1(window: sf::RenderWindow&amp;amp;)&lt;br&gt;+ initialize(state: bool): void&lt;br&gt;+ inputs(event: sf::Event&amp;amp;): Direction&lt;br&gt;+ update(dir: Direction&amp;amp;): bool&lt;br&gt;+ exit(): void&lt;br&gt;+ display(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ getPopManager(): PopupManager&amp;amp;&lt;br&gt;+ checkEvent(dir: Direction&amp;amp;): void&lt;br&gt;+ keyboardUp(): void&lt;br&gt;+ keyboardDown(): void&lt;br&gt;+ keyboardEnter(window: sf::RenderWindow&amp;amp;): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="6M8sck6Du09hCiysPuHK-10" vertex="1">
-          <mxGeometry y="120" width="490" height="320" as="geometry" />
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" parent="6M8sck6Du09hCiysPuHK-10" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="244.5" y="120" as="sourcePoint" />
-            <mxPoint x="244.5050000000001" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-11" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" parent="vzY-vIZQmNCtY-O4xjxG-1" edge="1">
-          <mxGeometry x="-0.9583" y="10" relative="1" as="geometry">
-            <mxPoint x="410" y="330" as="sourcePoint" />
-            <mxPoint x="650" y="90" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="530" y="330" />
-              <mxPoint x="530" y="90" />
-            </Array>
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-18" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" parent="vzY-vIZQmNCtY-O4xjxG-1" edge="1">
-          <mxGeometry x="-0.9167" y="10" relative="1" as="geometry">
-            <mxPoint x="410" y="50" as="sourcePoint" />
-            <mxPoint x="650" y="50" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6M8sck6Du09hCiysPuHK-19" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1.011;exitY=0.122;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.011;entryY=0.122;entryDx=0;entryDy=0;entryPerimeter=0;" parent="vzY-vIZQmNCtY-O4xjxG-1" target="6M8sck6Du09hCiysPuHK-3" edge="1">
-          <mxGeometry x="-0.8376" y="-10" relative="1" as="geometry">
-            <mxPoint x="1190" y="140" as="sourcePoint" />
-            <mxPoint x="1030" y="140" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="wnmq0HtFG61Ot0OFPwha-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Coin&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; # texture: sf::Texture&lt;br&gt;&amp;nbsp; # sprite: sf::Sprite&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; + Coin()&lt;br&gt;&amp;nbsp; + draw(window: sf::RenderWindow&amp;amp;) const: void&lt;br&gt;&amp;nbsp; + getSprite(): sf::Sprite&amp;amp;&lt;br&gt;&amp;nbsp; + setScale(x: float, y: float): void&lt;br&gt;&amp;nbsp; + setPosition(x: float, y: float): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="vzY-vIZQmNCtY-O4xjxG-1" vertex="1">
-          <mxGeometry x="1200" y="290" width="410" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="wnmq0HtFG61Ot0OFPwha-3" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0.18;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.18;entryDx=0;entryDy=0;entryPerimeter=0;" parent="vzY-vIZQmNCtY-O4xjxG-1" target="6M8sck6Du09hCiysPuHK-3" edge="1">
-          <mxGeometry x="-0.9095" y="-10" relative="1" as="geometry">
-            <mxPoint x="1190" y="360" as="sourcePoint" />
-            <mxPoint x="1024" y="280" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1090" y="360" />
-              <mxPoint x="1090" y="88" />
-            </Array>
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="SiepE9m1KUoaVk_jhHC1-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Page: GameScene&lt;/font&gt;&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="200" y="80" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GameScene&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&amp;nbsp;# player: PlayerSprite&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# boundaryChecker: BoundaryChecker&lt;br&gt;# movementSystem: MovementSystem&lt;br&gt;# coinTexture: sf::Texture&lt;br&gt;# coins: std::vector&amp;lt;std::pair&amp;lt;std::unique_ptr&amp;lt;Coin&amp;gt;, int&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ GameScene(window: sf::RenderWindow&amp;amp;)&lt;br&gt;+ ~GameScene()&lt;br&gt;+ initialize(state: bool): void&lt;br&gt;+ inputs(event: sf::Event&amp;amp;): Direction&lt;br&gt;+ update(dir: Direction&amp;amp;): bool&lt;br&gt;+ exit(): void&lt;br&gt;+ display(window: sf::RenderWindow&amp;amp;): void&lt;br&gt;+ setterPosition(): void&lt;br&gt;+ canPlayerMove(dir: Direction&amp;amp;): bool&lt;br&gt;+ movementSystem_(dir: Direction&amp;amp;, event: sf::Event&amp;amp;): void&lt;br&gt;+ keyboardUp(): void&lt;br&gt;+ keyboardDown(): void&lt;br&gt;+ keyboardEnter(window: sf::RenderWindow&amp;amp;): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# getPlayer(): PlayerSprite&amp;amp;&lt;br&gt;# getBoundaryChecker(): BoundaryChecker&amp;amp;&lt;br&gt;# getMovementSystem(): MovementSystem&amp;amp;&lt;br&gt;# getCoins(): std::vector&amp;lt;std::pair&amp;lt;std::unique_ptr&amp;lt;Coin&amp;gt;, int&amp;gt;&amp;gt;&amp;amp;&lt;br&gt;# eraseCoin(iterator: unsigned int): void&lt;br&gt;# verifyIfCollisionDetect(iterator: int): void&lt;br&gt;# addCoinToCoins(coin: std::unique_ptr&amp;lt;Coin&amp;gt;, page: int): void&lt;br&gt;# createCoin(x: float, y: float, page: int): void&lt;br&gt;# updateAllCoins(timer: float, page: int): void&lt;br&gt;# drawAllCoins(page: int, window: sf::RenderWindow&amp;amp;): void&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="800" y="150" width="360" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BoundaryChecker&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;N/A&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ BoundaryChecker()&lt;br&gt;+ canMove(direction: Direction, player: PlayerSprite&amp;amp;, window: sf::RenderWindow&amp;amp;, manager: BackgroundManager&amp;amp;): bool&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="140" y="170" width="410" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MovementSystem&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- movingDirection: std::unique_ptr&amp;lt;MovingDirection&amp;gt;&amp;nbsp;&lt;br&gt;+ boardManager: BoardManager&lt;br&gt;+ wall: WallManager&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&amp;nbsp;+ MovementSystem()&lt;br&gt;&amp;nbsp;+ changePosition(direction: Direction&amp;amp;, player: PlayerSprite&amp;amp;, newPage: bool&amp;amp;, page: int): void&amp;nbsp;&lt;br&gt;&amp;nbsp;+ getMovingDirection(): MovingDirection*&amp;nbsp; &amp;nbsp;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1330" y="200" width="540" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PlayerSprite&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- texture: sf::Texture&lt;br&gt;- sprite: sf::Sprite&lt;br&gt;- Xposition: float = 100.0f&lt;br&gt;- Yposition: float = 500.0f&lt;br&gt;- texturesPlayer: std::map&amp;lt;Direction, sf::Texture&amp;gt;&lt;br&gt;- spriteRects: std::map&amp;lt;Direction, sf::IntRect&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PlayerSprite(filename: std::filesystem::path&amp;amp;)&lt;br&gt;+ setterPosition(window: sf::RenderWindow&amp;amp;, begin: bool&amp;amp;): void&lt;br&gt;+ displayRightSprite(dir: Direction&amp;amp;): void&lt;br&gt;+ setScaleSprite(): void&lt;br&gt;+ getSprite(): sf::Sprite&amp;amp;&lt;br&gt;+ getYPosition(): float&lt;br&gt;+ getXPosition(): float&lt;br&gt;+ setXPosition(number: float): void&lt;br&gt;+ setYPosition(number: float): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="190" y="400" width="360" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-11" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="-0.9583" y="10" relative="1" as="geometry">
+            <mxPoint x="550" y="480" as="sourcePoint" />
+            <mxPoint x="790" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="670" y="480" />
+              <mxPoint x="670" y="240" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-18" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="-0.9167" y="10" relative="1" as="geometry">
+            <mxPoint x="550" y="200" as="sourcePoint" />
+            <mxPoint x="790" y="200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-19" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1.011;exitY=0.122;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.011;entryY=0.122;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="6M8sck6Du09hCiysPuHK-3" edge="1">
+          <mxGeometry x="-0.8376" y="-10" relative="1" as="geometry">
+            <mxPoint x="1330" y="290" as="sourcePoint" />
+            <mxPoint x="1170" y="290" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wnmq0HtFG61Ot0OFPwha-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Coin&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; # texture: sf::Texture&lt;br&gt;&amp;nbsp; # sprite: sf::Sprite&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; + Coin()&lt;br&gt;&amp;nbsp; + draw(window: sf::RenderWindow&amp;amp;) const: void&lt;br&gt;&amp;nbsp; + getSprite(): sf::Sprite&amp;amp;&lt;br&gt;&amp;nbsp; + setScale(x: float, y: float): void&lt;br&gt;&amp;nbsp; + setPosition(x: float, y: float): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="440" width="410" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="wnmq0HtFG61Ot0OFPwha-3" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/font&gt;" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0.18;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.18;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="6M8sck6Du09hCiysPuHK-3" edge="1">
+          <mxGeometry x="-0.9095" y="-10" relative="1" as="geometry">
+            <mxPoint x="1330" y="510" as="sourcePoint" />
+            <mxPoint x="1164" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1230" y="510" />
+              <mxPoint x="1230" y="238" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6M8sck6Du09hCiysPuHK-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="979.5" y="740.9090909090909" as="sourcePoint" />
+            <mxPoint x="979.5050000000001" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4mUrOgSD_AhOPYR955aX-2" value="Level1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="740" width="450" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="4mUrOgSD_AhOPYR955aX-3" value="page: Level1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4mUrOgSD_AhOPYR955aX-2">
+          <mxGeometry y="26" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4mUrOgSD_AhOPYR955aX-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4mUrOgSD_AhOPYR955aX-2">
+          <mxGeometry y="52" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4mUrOgSD_AhOPYR955aX-5" value="page: Level1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4mUrOgSD_AhOPYR955aX-2">
+          <mxGeometry y="60" width="450" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
