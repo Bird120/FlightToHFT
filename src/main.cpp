@@ -2,7 +2,6 @@
 // Created by bird on 13/08/25.
 //
 
-#include "test.hpp"
 #include <iostream>
 
 #include <SFML/Graphics/Sprite.hpp>
@@ -13,7 +12,7 @@
 int main()
 {
 
-  auto core = std::make_shared<Core>();
+  const auto core = std::make_shared<Core>();
   core->run();
 
 
