@@ -1,8 +1,5 @@
 # ignore some source folders
-/src/Coin/
 /src/Entity/
-/src/Collisions/
-/src/CollisionsManager/
 LaterPopup.cpp
 
 # ignore build folder if not delete
