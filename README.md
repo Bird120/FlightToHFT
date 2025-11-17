@@ -1,5 +1,11 @@
 # FlightToHFT
 
+## About
+
+For developing and improving my design and architectural skills, and because of my passion
+for hardware and software, I decided to create a 2D adventure game with PopUps about hardware
+and software knowledge, covering topics such as multithreading, low latency, and other hardware-related concepts.
+
 ## How to launch the project
 
 Open a terminal and run:
