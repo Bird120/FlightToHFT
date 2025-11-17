@@ -8,13 +8,16 @@
 PlayerSprite::PlayerSprite(const std::filesystem::path &filename)
 : texture(setTexture(filename)), sprite(texture)
 {
+
     setScaleSprite();
     initLoadImagePlayer();
 }
 
 void PlayerSprite::displayRightSprite(const Direction& dir)
 {
-    sprite.setTexture(texturesPlayer[dir]);
+    sprite.setTexture(texturesPlayer.at(dir), false);
+    //sprite.setTextureRect(sf::IntRect({0, 0}, {200, 165}));
+
 }
 
 
@@ -23,22 +26,23 @@ void PlayerSprite::initLoadImagePlayer()
 {
     sf::Texture texture_player;
 
-    /*texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right.png");
-    texturesPlayer[Direction::UP] = texture_player;*/
-    if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right.png"))
-        std::cerr << "Error :impossible to load right.png for UP" << std::endl;
+
+    if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right3.png"))
+        std::cerr << "error: impossible to load right.png for UP" << std::endl;
     texturesPlayer[Direction::UP] = texture_player;
 
-     if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right.png"))
-         std::cerr << "Error :impossible to load right.png for DOWN" << std::endl;
+    if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right3.png"))
+        std::cerr << "error: impossible to load right.png for DOWN" << std::endl;
     texturesPlayer[Direction::DOWN] = texture_player;
 
     if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/left.png"))
-        std::cerr << "Error :impossible to load right.png for LEFT" << std::endl;
+        std::cerr << "error :impossible to load right.png for LEFT" << std::endl;
+    texture_player.setSmooth(true);
     texturesPlayer[Direction::LEFT] = texture_player;
 
-    if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right.png"))
-        std::cerr << "Error :impossible to load right.png for RIGHT" << std::endl;
+    if (!texture_player.loadFromFile("/home/bird/CLionProjects/FlightToHFT++/assets/images/right3.png"))
+        std::cerr << "error :impossible to load right.png for RIGHT" << std::endl;
+    texture_player.setSmooth(true);
     texturesPlayer[Direction::RIGHT] = texture_player;
 
     sprite.setTexture(texturesPlayer[Direction::DOWN]);
@@ -58,8 +62,8 @@ void PlayerSprite::setterPosition(sf::RenderWindow &window, const bool& begin)
 
 void PlayerSprite::setScaleSprite()
 {
-    sprite.setOrigin({0, 0});
-    sprite.setScale(sf::Vector2f(0.5f, 0.5f));
+    //sprite.setOrigin({0, 0});
+    sprite.setScale(sf::Vector2f(1.f, 1.f));
 }
 
 

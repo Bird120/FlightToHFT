@@ -5,30 +5,45 @@
 #include "PopUp.hpp"
 
 
-PopUp::PopUp(const std::string& questions)
-    : cadre(setTexture("/home/bird/CLionProjects/FlightToHFT++/assets/popup_pack_sfml/pieuvre.png")),
-        sprite(cadre), font("/home/bird/CLionProjects/FlightToHFT++/assets/fonts/arial.ttf"),
-        Options{font, font, font, font}, labels(questions)
+PopUp::PopUp(const std::string& question, const std::string& choice1, const std::string& choice2, const std::string& choice3)
+    :   Options{font,font,font,font}, labels{question,choice1, choice2, choice3}
 {
-    sprite.setTextureRect({{10, 10}, {50, 30}});
-    sprite.setPosition({200.f, 25.f});
+    // Charger la police dans le membre 'font' (doit réussir avant setFont)
 
     for (int i = 0; i < SECTIONS; i++)
     {
-        Options[i].setFillColor(i == 0 ? SELECTED_COLOR : DEFAULT_COLOR);
+
+        if (i == 0)
+            Options[i].setFillColor(QUESTION_COLOR);
+        else if (i == 1)
+            Options[i].setFillColor(SELECTED_COLOR);
+        else
+            Options[i].setFillColor(DEFAULT_COLOR);
+
+
+        Options[i].setFont(font);
+        Options[i].setCharacterSize(20);
         Options[i].setString(labels[i]);
-        Options[i].setPosition({WIDTH / 2.f - 50, (HEIGHT / 2.f + (i * 20))});
+        Options[i].setPosition({WIDTH / 2.f , (HEIGHT / 2.f + (i * 60))});
     }
 }
 
-sf::Sprite& PopUp::getSprite()
+sf::Text* PopUp::getOptions()
 {
-  return sprite;
+    return Options;
 }
 
-void PopUp::display(sf::RenderWindow& window)
+int PopUp::getNumbersItem()
 {
-    window.draw(sprite);
-    for(const auto& i : Options)
-        window.draw(i);
+    return SECTIONS;
 }
+
+void PopUp::display(sf::RenderWindow& window) const
+{
+    for(const auto& i : Options)
+    {
+        std::string l =  i.getString();
+        window.draw(i);
+    }
+}
+

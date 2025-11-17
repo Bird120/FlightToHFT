@@ -22,10 +22,11 @@ class PlayerSprite {
   private:
     sf::Texture texture;
     sf::Sprite sprite;
-    float Xposition = -200.0f;
-    float Yposition = 480.0f;
+    float Xposition = 100.0f;
+    float Yposition = 500.0f;
     std::map<Direction, sf::Texture> texturesPlayer;
     void initLoadImagePlayer();
+  std::map<Direction, sf::IntRect> spriteRects;
 
   public:
 

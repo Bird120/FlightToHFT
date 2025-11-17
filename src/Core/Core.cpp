@@ -22,13 +22,20 @@ void Core::escape(const sf::Event& event)
     }
 }
 
+std::unique_ptr<Scene> Core::changeGameLevel()
+{
 
+    return std::make_unique<Level1>(window);
+}
 
 void Core::run()
 {
+    FinalScene finalScene(window, score);
+
+        scene->initialize(false);
+
     while (window.isOpen())
     {
-        scene->initialize(false);
         while (const std::optional event = window.pollEvent())
         {
           escape(*event);
@@ -36,15 +43,23 @@ void Core::run()
             if (scene->update(scene->inputs(*event)))
             {
 
-                auto newscene  = scene->changeGameLevel();
+                auto newscene  = this->changeGameLevel();
                 scene = nullptr;
                 scene = std::move(newscene);
 
             }
+            else
+            {
+                if (scene->getFinished())
+                {
+                    score = scene->getScore();
+                }
+            }
+
           }
-
-        scene->display(window);
-
+        if (scene->getFinished())
+            finalScene.display();
+        else
+            scene->display(window);
     }
-
 }

@@ -1,6 +1,7 @@
 #include "Upmoving.hpp"
 
 
+
 bool Upmoving::getMoving() const
 {
     return upmoving;
@@ -11,7 +12,11 @@ void Upmoving::setGroundY(float value)
     groundY = value;
 }
 
-
+void  Upmoving::setVelocity(float value)
+{
+    //std::cout <<" Dans Upmoving::setVelocity( value ) recu --->: " << value << std::endl;
+    velocityY += value;
+}
 
 float Upmoving::getVelocity() const
 {
@@ -41,7 +46,7 @@ void Upmoving::keyPressed(const float& value){
 
 
 
-bool Upmoving::getAvailableBoard() const
+bool Upmoving::getAvailableBoard()
 {
     return availableBoard;
 }

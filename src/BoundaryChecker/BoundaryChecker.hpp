@@ -14,12 +14,10 @@
 #include "Upmoving.hpp"
 
 class BoundaryChecker {
-private:
-  Upmoving up;
-  //BoardManager Boardmanager;
+
 public:
-  BoundaryChecker();
-  bool canMove(Direction direction, PlayerSprite& player, float MOVE, const sf::RenderWindow& window, BackgroundManager& manager);
+  BoundaryChecker() = default;
+  bool canMove(Direction direction, PlayerSprite& player, const sf::RenderWindow& window, BackgroundManager& manager);
   void screenLimit(auto x, auto y);
 
 };

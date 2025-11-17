@@ -19,6 +19,18 @@ void BackgroundManager::moveLevel(const GameLevel& level)
     currentLevel.second = 1;
 }
 
+
+void BackgroundManager::setNewPage(const bool& state)
+{
+    newPage = state;
+}
+
+
+bool&  BackgroundManager::getNewPage()
+{
+    return newPage;
+}
+
 int BackgroundManager::getPage() const
 {
     return getCurrentPageNumber();
@@ -39,26 +51,38 @@ sf::Sprite& BackgroundManager::displayCurrentBackground()
     return sprite;
 }
 
-void BackgroundManager::changeBackground_(const bool& state)
+
+bool BackgroundManager::getFinished() const
+{
+    return finished;
+}
+
+
+bool BackgroundManager::changeBackground_(const bool& state)
 {
     if (state == true)
     {
         if (currentLevel.second == 3)
         {
-            auto it = static_cast<int>(currentLevel.first);
+            finished = true;
+            return false;
+        }
+
+        //{
+
+           /* auto it = static_cast<int>(currentLevel.first);
 
             if (it < 4 && it > 0 )
             {
                 currentLevel.first = static_cast<GameLevel>(it);
                 currentLevel.second = 1;
-            }
-        }
-            else
-            {
-                currentLevel.second = (static_cast<int>(currentLevel.second)+ 1);
-            }
+            }*/
+        //}
+
+        currentLevel.second = (static_cast<int>(currentLevel.second)+ 1);
         
     }
+    return true;
 }
 
 void BackgroundManager::initBackgrounds()

@@ -6,11 +6,24 @@
 #define MOVEMENTSYSTEM_HPP
 #include "PlayerSprite.hpp"
 #include "Direction.hpp"
+#include "MovingDirection.hpp"
+#include "BoardManager.hpp"
+#include "WallManager.hpp"
+#include "Right.hpp"
+#include "Left.hpp"
+#include "Up.hpp"
+#include "Down.hpp"
+#include <SFML/Graphics/Sprite.hpp>
 
 class MovementSystem {
+    std::unique_ptr<MovingDirection> movingDirection;
 
   public:
     MovementSystem();
-    void changePosition(const Direction& direction, float MOVE, PlayerSprite& player);
+    BoardManager boardManager;
+    WallManager wall;
+    void changePosition(const Direction& direction, PlayerSprite& player, bool& newPage, int page);
+    void reset();
+    MovingDirection* getMovingDirection() const noexcept;
 };
 #endif //MOVEMENTSYSTEM_HPP

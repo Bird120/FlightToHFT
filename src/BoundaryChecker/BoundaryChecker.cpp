@@ -7,7 +7,6 @@
 #include "Direction.hpp"
 
 
-BoundaryChecker::BoundaryChecker() : up(Upmoving(375.f, 500.f)) {}
 
 
 void BoundaryChecker::screenLimit(auto x, auto y)
@@ -15,7 +14,7 @@ void BoundaryChecker::screenLimit(auto x, auto y)
 }
 
 
-bool BoundaryChecker::canMove(Direction direction, PlayerSprite& player, float MOVE, const sf::RenderWindow& window, BackgroundManager& manager)
+bool BoundaryChecker::canMove(Direction direction, PlayerSprite& player, const sf::RenderWindow& window, BackgroundManager& manager)
 {
   auto borders = player.getSprite().getGlobalBounds();
   auto windowSize = window.getSize();
@@ -23,7 +22,7 @@ bool BoundaryChecker::canMove(Direction direction, PlayerSprite& player, float M
   switch(direction){
     case Direction::UP:
       {
-        if (borders.position.y - MOVE > 0)
+        if (borders.position.y  > 0)
         {
           return true;
         }
@@ -32,24 +31,49 @@ bool BoundaryChecker::canMove(Direction direction, PlayerSprite& player, float M
       }
   case Direction::DOWN:
     {
-    if (borders.position.y + MOVE < windowSize.y) return true;
+    if (borders.position.y  < windowSize.y) return true;
     else return false;
     }
   case Direction::LEFT:
       {
-        if ((borders.position.x - MOVE > -180) &&(borders.position.x - MOVE < 890))
+        if ((borders.position.x >= 30.f) &&(borders.position.x <= 1200))
           return true;
         else
           return false;
       }
   case Direction::RIGHT:
       {
-        if (borders.position.x + MOVE < 700.0)
+        if (borders.position.x >= 10.f && borders.position.x <= 1100.f)
+        {
           return true;
+        }
         else
         {
-          manager.changeBackground_(true);
-          player.setXPosition(-200);
+
+          if (!manager.changeBackground_(true))
+            return false;
+          if (manager.getPage() == 2)
+          {
+            player.getSprite().setPosition({10.f, 480.f});
+
+            manager.setNewPage(true);
+
+          }
+          else if (manager.getPage() == 3)
+          {
+            player.getSprite().setPosition({10.f, 460.f});
+
+            manager.setNewPage(true);
+
+
+          }
+          else if (manager.getPage() == 1)
+          {
+            player.getSprite().setPosition({10.f, 500.f});
+
+            manager.setNewPage(true);
+
+          }
           return true;
         }
     }

@@ -4,30 +4,23 @@
 
 #include "Scene.hpp"
 
-#include <Level1.hpp>
 
 
-Scene::Scene(sf::RenderWindow& window)
-    : window(window)
+Scene::Scene(sf::RenderWindow& window) : window_(window), Menu(false)
 {
-    playMusic("../assets/sounds/spaceadventure.ogg");
-
 }
 
-std::unique_ptr<Scene> Scene::newGame(const GameLevel& level)
-{
-    if (level == GameLevel::Level1){
 
-        return std::make_unique<Level1>(getWindow());
-    }
-    return nullptr;
+int Scene::getScore()
+{
+    return score.getScore();
 }
 
-std::unique_ptr<Scene> Scene::changeGameLevel()
-{
-    return std::make_unique<Level1>(getWindow());
-}
 
+bool Scene::getFinished() const
+{
+    return finished;
+}
 
 bool Scene::getStateMenu()
 {
@@ -38,13 +31,6 @@ bool Scene::stateMenu(bool state)
 {
     Menu = state;
     return Menu;
-}
-void Scene::playMusic(const std::filesystem::path& filename)
-{
-    if (!music.openFromFile(filename)) {
-        std::cerr << "Scene: failed to load music" << std::endl;
-    }
-    music.play();
 }
 
 

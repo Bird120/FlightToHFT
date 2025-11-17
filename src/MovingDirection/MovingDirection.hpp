@@ -12,15 +12,24 @@
 #include "HeightUp.hpp"
 
 
+#include "WallManager.hpp"
+
 struct MovingDirection {
-    MovingDirection():moving(Upmoving(375.f, 480.f)){}
-    Upmoving moving;
-    Upmoving& getMoving(){return moving;};
-    StateMoving stateMoving_;
-    virtual void initializeMoving(sf::Sprite& sprite, Board* board, bool availableBoard) = 0;
+private:
+    Upmoving moving_;
+
+public:
+    MovingDirection(float Y):moving_(Upmoving(375.f, Y)){}
+    Upmoving& getMoving(){return moving_;};
+    MovingType movingType_;
+    bool inMove = false;
+    MovingType& getMovingType() {return movingType_;}
+
+    virtual void initializeMoving(sf::Sprite& sprite, WallManager& wall, unsigned int page) = 0;
     virtual void doTheMove(const float& dt, sf::Sprite& sprite) = 0;
     virtual ~MovingDirection() = default;
 };
+
 
 
 

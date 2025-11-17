@@ -7,7 +7,6 @@ Direction KeyboardEvents::detectKey(const T& event)
         if (keyPressed->scancode == sf::Keyboard::Scancode::Right)
         {
             dir = Direction::RIGHT;
-
         }
         else if (keyPressed->scancode == sf::Keyboard::Scancode::Left)
         {
@@ -35,7 +34,7 @@ Direction KeyboardEvents::detectKey(const T& event)
 
 }
 
-//const sf::Event& event, MovingDirection* movingDirection, BoardManager& boardManager, PlayerSprite& sprite
+
 
 template<typename T, typename S, typename B, typename P>
 Direction KeyboardEvents::detectKey(const T& event, S*& movingDirection, B& boardManager, P& sprite)
@@ -56,15 +55,8 @@ Direction KeyboardEvents::detectKey(const T& event, S*& movingDirection, B& boar
         }
         else if (keyPressed->scancode == sf::Keyboard::Scancode::Up)
         {
-            movingDirection = nullptr;
-            movingDirection = new Upp();
-            boardManager.checkIfBoard(sprite. getXPosition(), sprite. getYPosition(),movingDirection->getMoving());
 
-            movingDirection->initializeMoving(sprite.getSprite(), movingDirection->getMoving().currentboard_, movingDirection->getMoving().availableBoard);
-
-
-            std::cout<< "key right has been pressed! UP" << std::endl;
-            dir = Direction::DEFAULT;
+            dir = Direction::UP;
 
         }
         else if (keyPressed->scancode == sf::Keyboard::Scancode::Down)

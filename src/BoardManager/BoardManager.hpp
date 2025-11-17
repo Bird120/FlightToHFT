@@ -4,29 +4,24 @@
 
 #ifndef BOARDMANAGER_HPP
 #define BOARDMANAGER_HPP
-#include "Upmoving.hpp"
-#include "Board.hpp"
-
 
 #include "Board.hpp"
 #include <iostream>
 #include "Upmoving.hpp"
+#include "MovingDirection.hpp"
 
 struct BoardManager
 {
-    std::array<Board, 1> boards;
+    BoardManager();
+    std::array<Board, 4> boards;
     //Board accurrentBoard;
     bool currentBoard;
-    void checkIfBoard(float posX, float posY, Upmoving& up);
+    void checkIfBoard(float posX, float posY, Upmoving& up, unsigned int page);
     void valueBoard(Board* board, Upmoving& upmoving);
-    Board* checkboard(float value, float valueY, Upmoving& up);
+    Board* checkboard(float value, float valueY, Upmoving& up, unsigned int page);
 
-    BoardManager(): currentBoard(false){
-        boards = {Board(1, 400.f, 260.f)};
-    }
 
 };
-
 
 
 #endif //BOARDMANAGER_HPP

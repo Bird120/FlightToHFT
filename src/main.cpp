@@ -5,8 +5,6 @@
 #include "test.hpp"
 #include <iostream>
 
-#include "BackgroundManager.hpp"
-#include "Coin2.hpp"
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "Core/Core.hpp"

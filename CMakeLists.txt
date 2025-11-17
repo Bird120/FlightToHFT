@@ -4,49 +4,45 @@ project(FlightToHFT__)
 set(CMAKE_CXX_STANDARD 20)
 
 
-file(GLOB_RECURSE ALL_SOURCES "src/*.cpp")
-
-set(SOURCES "")
-foreach(src ${ALL_SOURCES})
-    if(
-            NOT src STREQUAL "${CMAKE_SOURCE_DIR}/src/main_copy.cpp"
-            AND NOT src STREQUAL "${CMAKE_SOURCE_DIR}/src/main_side.cpp"
-            AND NOT src STREQUAL "${CMAKE_SOURCE_DIR}/test.cpp"
-    )
-        list(APPEND SOURCES ${src})
-    endif()
-endforeach()
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 
 
-list(REMOVE_ITEM SOURCES
-        "${CMAKE_SOURCE_DIR}/src/main_copy.cpp"
-        "${CMAKE_SOURCE_DIR}/src/main_side.cpp"
-        "${CMAKE_SOURCE_DIR}/test.cpp"
-
-)
 
 add_executable(FlightToHFT__ ${SOURCES})
 
-target_include_directories(FlightToHFT__ PRIVATE
+
+target_include_directories(FlightToHFT__ PRIVATE  -Wall  -Wextra -Werror
         include
         src/PlayerSprite
         src/BoundaryChecker
         src/KeyboardEvents
         src/Background
-        src/GameScene/Menu
-        src/GameScene
-        src/Game
+        src/Scene/Menu
+        src/Scene/GameScene
         src/Board
         src/BoardManager
         src/Upmoving_
         src/PopUp
+        src/PopManager
+        src/Score
         src/Scene
-        src/Level1
-        src/Up
-        src/Down
+        src/FinalScene
+        src/Coin
+        src/ChoiceSelection
+        src/Scene/GameScene/Level1
+        src/Wall
+        src/WallManager
+        src/HorizontalMove
+        src/MovingDirection/Up
+        src/MovingDirection/Right
+        src/MovingDirection/Left
+        src/MovingDirection/Down
+        src/PopupManagerLayer
         src/BackgroundManager
         src/MovingDirection
+        src/Collisions
+        src/CollisionsManager
         src/MovementSystem)
 
 

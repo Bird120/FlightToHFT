@@ -5,8 +5,9 @@
 #include "Board.hpp"
 
 
-Board::Board(unsigned int page, float beginX, float height)
-    : page_(page), beginX_(beginX), endX_(beginX_ + widthBoard), height_(getUpMovingFromHeight(height)), groundY(GroundY)
+
+Board::Board(unsigned int page, float beginX,  float endX, float height)
+    : page_(page), beginX_(beginX), endX_(endX), height_(getUpMovingFromHeight(height)), groundY(GroundY)
 {}
 float Board::getUpMovingFromHeight(float height)
 {
@@ -21,39 +22,44 @@ float Board::getUpMovingFromHeight(float height)
 
 float Board::getHeightBoard()
 {
-    return upmovingValue;
+  return upmovingValue;
 }
+
+
+
 
 bool Board::aroundBoard(float valueX, float valueY)
 {
-    if ((valueX >= beginX_ - 40.f && valueX < endX_ - 105.f))
-    {
-        if (valueY <= groundY - upmovingValue)
-        {
+  const bool HorizontalBoardBounds = (valueX >= beginX_ - MarginPlayer::Player && valueX <= endX_  - MarginPlayer::Player);
+  const bool OnBoard = (valueY < groundY);
+   // for right and left move on board
 
-            return true;
-            //an else for case the borser is smaller than the player
-        }
-        else
-            return false;
-    }
-    //jump to a left side of an board
-    else if (valueX >= beginX_ - 80.f && valueX <= beginX_)
-    {
-        return true;
+    if (HorizontalBoardBounds && OnBoard)
+	  return true;
 
-    }
-    else if (valueX >= endX_ - 80.f && valueX <= endX_ + 40.f)
-    {
+   //jump to a left side of a board : va romgroundcanJumpOnBoard
+    const bool fromGroundUptoBoard = (valueX >= beginX_ - MarginPlayer::LeftMargin && valueX <= beginX_);
+    if (fromGroundUptoBoard)
+      {
+      leftside = true;
+      rightside = false;
+      return true;
+	}
+     //Right side jump/down to the ground
+   const bool fromBoardDowntoGround = (valueX >= endX_ - MarginPlayer::Player && valueX <= endX_ + MarginPlayer::Player);
+    if (fromBoardDowntoGround)
+      {
+      	leftside = false;
+      	rightside = true;
         return true;
-    }
+	  }
     return false;
 }
 
 
 bool Board::canGoLeftOnBoard(const float& value)
 {
-    if (value >= beginX_ - 80.f && beginX_ >= value)
+    if (value >= beginX_ - MarginPlayer::Player  && beginX_ + MarginPlayer::Player  >= value)
     {
         return true;
     }
@@ -62,11 +68,11 @@ bool Board::canGoLeftOnBoard(const float& value)
 
 bool Board::canBeOnTheBoard(const float& value)
 {
-    if (value <= beginX_ || value >= beginX_ - 40)
+    if (value <= beginX_ || value >= beginX_ - MarginPlayer::Player)
     {
         return true;
     }
-    else if (value >= endX_ || value <= endX_ + 40)
+    else if (value >= endX_ || value <= endX_ + MarginPlayer::Player)
         return true;
     else
         return false;
@@ -82,9 +88,14 @@ bool Board::border(const float& value)
 
 bool Board::canGoRightOnBoard(const float& value)
 {
-    if (value >= endX_ - 80.f  && value <= endX_ + 40.f)
+    if (value >= endX_ - 40.f  && value <= endX_ + MarginPlayer::Player)
     {
         return true;
     }
     return false;
+}
+
+unsigned int Board::getPage()
+{
+  return page_;
 }

@@ -16,8 +16,8 @@ struct Upmoving
   bool upmoving = false;
   bool getMoving() const;
 
-  //default || down
   float groundX;
+  //default || down
   float groundY; // sol (y position)
 
   //up
@@ -29,14 +29,14 @@ struct Upmoving
   Board* currentboard_;
   Board* getBoard();
   bool availableBoard =  false;
-  bool getAvailableBoard() const;
+  bool getAvailableBoard();
 
 
   float velocityY = 0.f;       // vertical speed
   float getVelocity() const;
+  void setVelocity(float value);
 
-
-  float gravity = 2000.f;       // speed in down(always positive)
+  float gravity = 500.f;       // speed in down(always positive)
 
 
   void setGravity(float value);
@@ -50,10 +50,5 @@ struct Upmoving
 
 
 };
-
-
-
-
-
 
 #endif //UPMOVING_HPP
