@@ -12,9 +12,9 @@ and software knowledge, covering topics such as multithreading, low latency, and
 - Components used: System, Window, Graphics, Audio, Network
 - Version: 3.0.0
 - Installation:
-- 
-> I installed SFML 3.0.0 manually on Ubuntu  
-> with headers in `/usr/include` and libraries in `/usr/lib`.
+
+I installed SFML 3.0.0 manually on Ubuntu  
+with headers in `/usr/include` and libraries in `/usr/lib`.
 
 
 
